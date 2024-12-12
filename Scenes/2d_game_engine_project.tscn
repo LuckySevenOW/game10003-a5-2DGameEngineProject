@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bio0l7li78iyd"]
+[gd_scene load_steps=4 format=3 uid="uid://bio0l7li78iyd"]
 
 [ext_resource type="Script" path="res://Scripts/GameEngineProject.cs" id="1_5jyai"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_3ms8g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ejkf"]
 font_size = 25
@@ -15,19 +16,24 @@ offset_bottom = 648.0
 color = Color(0.305882, 0.345098, 1, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 510.0
-offset_top = 283.0
-offset_right = 658.0
-offset_bottom = 318.0
+offset_left = 21.0
+offset_top = 14.0
+offset_right = 169.0
+offset_bottom = 49.0
 text = "Hello World!"
 label_settings = SubResource("LabelSettings_0ejkf")
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="TimeLabel" type="Label" parent="Node2D"]
-offset_left = 510.0
-offset_top = 339.0
-offset_right = 685.0
-offset_bottom = 374.0
+offset_left = 24.0
+offset_top = 52.0
+offset_right = 199.0
+offset_bottom = 87.0
 text = "(Time Elapsed)"
 label_settings = SubResource("LabelSettings_0ejkf")
+
+[node name="Rectangle" type="Node2D" parent="."]
+position = Vector2(130, 540)
+script = ExtResource("2_3ms8g")
+size = Vector2(100, 45.2715)
