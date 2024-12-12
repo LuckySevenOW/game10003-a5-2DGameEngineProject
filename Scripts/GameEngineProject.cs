@@ -11,7 +11,7 @@ public partial class GameEngineProject : Node2D
     {
         base._Ready();
 
-        timeLabel = GetNode<Label>("Node2D/TimeLabel");
+        timeLabel = GetNode<Label>("TimeLabel/TimeLabel");
     }
 
     public override void _Process(double delta)
