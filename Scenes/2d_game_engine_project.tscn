@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bio0l7li78iyd"]
+[gd_scene load_steps=8 format=3 uid="uid://bio0l7li78iyd"]
 
 [ext_resource type="Script" path="res://Scripts/GameEngineProject.cs" id="1_5jyai"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_3ms8g"]
@@ -8,13 +8,23 @@
 font_size = 25
 font_color = Color(0, 0, 0.501961, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aew05"]
+size = Vector2(1280, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urv4t"]
+size = Vector2(13, 62.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v0or"]
+size = Vector2(60.0128, 14.3819)
+
 [node name="2DGameEngineProject" type="Node2D"]
 script = ExtResource("1_5jyai")
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.305882, 0.345098, 1, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.05, 0.05, 0.05, 1)
+metadata/_edit_lock_ = true
 
 [node name="TimeLabel" type="Node2D" parent="."]
 
@@ -30,6 +40,490 @@ label_settings = SubResource("LabelSettings_0ejkf")
 script = ExtResource("2_q5t7f")
 
 [node name="Player" type="Node2D" parent="Player"]
-position = Vector2(154.379, 540)
+position = Vector2(103, 629.199)
 script = ExtResource("2_3ms8g")
-size = Vector2(51.2424, 45.2715)
+size = Vector2(51.2424, 45.6693)
+fill_color = Color(0.34112, 0.41, 0.3116, 1)
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ground"]
+position = Vector2(640, 686)
+shape = SubResource("RectangleShape2D_aew05")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Ground"]
+position = Vector2(639.989, 686.003)
+script = ExtResource("2_3ms8g")
+size = Vector2(1280, 68)
+corner_radius = 0.0
+fill_color = Color(0.3135, 0.55, 0.333208, 1)
+metadata/_edit_lock_ = true
+
+[node name="Structures" type="Node2D" parent="Level"]
+
+[node name="Layer 1" type="Node2D" parent="Level/Structures"]
+
+[node name="Pillars" type="Node2D" parent="Level/Structures/Layer 1"]
+
+[node name="Pillar 1" type="RigidBody2D" parent="Level/Structures/Layer 1/Pillars"]
+position = Vector2(930, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Pillars/Pillar 1"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Pillars/Pillar 1"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13.0002, 62.2307)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 2" type="RigidBody2D" parent="Level/Structures/Layer 1/Pillars"]
+position = Vector2(990, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Pillars/Pillar 2"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Pillars/Pillar 2"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 3" type="RigidBody2D" parent="Level/Structures/Layer 1/Pillars"]
+position = Vector2(1050, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Pillars/Pillar 3"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Pillars/Pillar 3"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 4" type="RigidBody2D" parent="Level/Structures/Layer 1/Pillars"]
+position = Vector2(1110, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Pillars/Pillar 4"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Pillars/Pillar 4"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 5" type="RigidBody2D" parent="Level/Structures/Layer 1/Pillars"]
+position = Vector2(1170, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Pillars/Pillar 5"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Pillars/Pillar 5"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 6" type="RigidBody2D" parent="Level/Structures/Layer 1/Pillars"]
+position = Vector2(1230, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Pillars/Pillar 6"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Pillars/Pillar 6"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="Level/Structures/Layer 1"]
+
+[node name="Platform 1" type="RigidBody2D" parent="Level/Structures/Layer 1/Platforms"]
+position = Vector2(960, 586.08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Platforms/Platform 1"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Platforms/Platform 1"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 2" type="RigidBody2D" parent="Level/Structures/Layer 1/Platforms"]
+position = Vector2(1020.02, 586.078)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Platforms/Platform 2"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Platforms/Platform 2"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 3" type="RigidBody2D" parent="Level/Structures/Layer 1/Platforms"]
+position = Vector2(1080.06, 586.074)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Platforms/Platform 3"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Platforms/Platform 3"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 4" type="RigidBody2D" parent="Level/Structures/Layer 1/Platforms"]
+position = Vector2(1140.1, 586.074)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Platforms/Platform 4"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Platforms/Platform 4"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 5" type="RigidBody2D" parent="Level/Structures/Layer 1/Platforms"]
+position = Vector2(1200.13, 586.083)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 1/Platforms/Platform 5"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 1/Platforms/Platform 5"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Layer 2" type="Node2D" parent="Level/Structures"]
+position = Vector2(30, -75.27)
+
+[node name="Pillars" type="Node2D" parent="Level/Structures/Layer 2"]
+
+[node name="Pillar 1" type="RigidBody2D" parent="Level/Structures/Layer 2/Pillars"]
+position = Vector2(930, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Pillars/Pillar 1"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Pillars/Pillar 1"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.2307)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 2" type="RigidBody2D" parent="Level/Structures/Layer 2/Pillars"]
+position = Vector2(990, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Pillars/Pillar 2"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Pillars/Pillar 2"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 3" type="RigidBody2D" parent="Level/Structures/Layer 2/Pillars"]
+position = Vector2(1050, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Pillars/Pillar 3"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Pillars/Pillar 3"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 4" type="RigidBody2D" parent="Level/Structures/Layer 2/Pillars"]
+position = Vector2(1110, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Pillars/Pillar 4"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Pillars/Pillar 4"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 5" type="RigidBody2D" parent="Level/Structures/Layer 2/Pillars"]
+position = Vector2(1170, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Pillars/Pillar 5"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Pillars/Pillar 5"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="Level/Structures/Layer 2"]
+
+[node name="Platform 1" type="RigidBody2D" parent="Level/Structures/Layer 2/Platforms"]
+position = Vector2(960, 586.08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Platforms/Platform 1"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Platforms/Platform 1"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 2" type="RigidBody2D" parent="Level/Structures/Layer 2/Platforms"]
+position = Vector2(1020.02, 586.078)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Platforms/Platform 2"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Platforms/Platform 2"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 3" type="RigidBody2D" parent="Level/Structures/Layer 2/Platforms"]
+position = Vector2(1080.06, 586.074)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Platforms/Platform 3"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Platforms/Platform 3"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 4" type="RigidBody2D" parent="Level/Structures/Layer 2/Platforms"]
+position = Vector2(1140.1, 586.074)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 2/Platforms/Platform 4"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 2/Platforms/Platform 4"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Layer 3" type="Node2D" parent="Level/Structures"]
+position = Vector2(60, -150.54)
+
+[node name="Pillars" type="Node2D" parent="Level/Structures/Layer 3"]
+
+[node name="Pillar 1" type="RigidBody2D" parent="Level/Structures/Layer 3/Pillars"]
+position = Vector2(930, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Pillars/Pillar 1"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Pillars/Pillar 1"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.2307)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 2" type="RigidBody2D" parent="Level/Structures/Layer 3/Pillars"]
+position = Vector2(990, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Pillars/Pillar 2"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Pillars/Pillar 2"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 3" type="RigidBody2D" parent="Level/Structures/Layer 3/Pillars"]
+position = Vector2(1050, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Pillars/Pillar 3"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Pillars/Pillar 3"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 4" type="RigidBody2D" parent="Level/Structures/Layer 3/Pillars"]
+position = Vector2(1110, 621)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Pillars/Pillar 4"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_urv4t")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Pillars/Pillar 4"]
+position = Vector2(0, -0.129272)
+script = ExtResource("2_3ms8g")
+size = Vector2(13, 62.231)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="Level/Structures/Layer 3"]
+
+[node name="Platform 1" type="RigidBody2D" parent="Level/Structures/Layer 3/Platforms"]
+position = Vector2(960, 586.08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Platforms/Platform 1"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Platforms/Platform 1"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 2" type="RigidBody2D" parent="Level/Structures/Layer 3/Platforms"]
+position = Vector2(1020.02, 586.078)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Platforms/Platform 2"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Platforms/Platform 2"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
+
+[node name="Platform 3" type="RigidBody2D" parent="Level/Structures/Layer 3/Platforms"]
+position = Vector2(1080.06, 586.074)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Structures/Layer 3/Platforms/Platform 3"]
+position = Vector2(-0.00140381, -2.86597)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_5v0or")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Structures/Layer 3/Platforms/Platform 3"]
+position = Vector2(-0.00302124, -2.83905)
+script = ExtResource("2_3ms8g")
+size = Vector2(60.004, 13)
+corner_radius = 0.0
+fill_color = Color(0.359069, 0.359069, 0.359069, 1)
+metadata/_edit_lock_ = true
