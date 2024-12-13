@@ -11,12 +11,14 @@ height = 29.3772
 script = ExtResource("1_5fmlt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aoa15")
 metadata/_edit_lock_ = true
 
 [node name="Rectangle" type="Node2D" parent="."]
-position = Vector2(3.05176e-05, 0)
+position = Vector2(0.0163879, 0)
+rotation = 1.5708
 script = ExtResource("1_qiitm")
-size = Vector2(8.99554, 29.375)
-corner_radius = 2.38791
+size = Vector2(8.99744, 29.375)
+corner_radius = 3.51038
 metadata/_edit_lock_ = true

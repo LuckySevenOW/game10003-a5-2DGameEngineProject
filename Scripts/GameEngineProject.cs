@@ -3,6 +3,7 @@ using System;
 
 public partial class GameEngineProject : Node2D
 {
+    
     ProjectileLauncher launcher = new ProjectileLauncher();
 
     public Label ammoCount;
@@ -11,6 +12,7 @@ public partial class GameEngineProject : Node2D
     {
         base._Ready();
 
+        //Assigns ammoCount the AmmoCount label from the 2d_game_engine_project scene.
         ammoCount = GetNode<Label>("AmmoCount/AmmoCount");
     }
 
@@ -18,6 +20,7 @@ public partial class GameEngineProject : Node2D
     {
         base._Process(delta);
 
+        //Draws the text on the ammoCount label, and (should) change the text to reflect the current ammo count (0-3).
         ammoCount.Text = $"Missiles Remaining: {launcher.ammo}";
     }
 }

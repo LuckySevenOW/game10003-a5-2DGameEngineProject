@@ -16,3 +16,4 @@ ProjectileScene = ExtResource("2_u70ed")
 script = ExtResource("2_ypjlg")
 size = Vector2(65.4741, 20)
 corner_radius = 5.75977
+fill_color = Color(0.34112, 0.41, 0.3116, 1)
