@@ -3,11 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/GameEngineProject.cs" id="1_5jyai"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_3ms8g"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="2_q5t7f"]
-[ext_resource type="PackedScene" uid="uid://bgif4i0gy1e55" path="res://Scenes/projectile.tscn" id="3_shpse"]
+[ext_resource type="PackedScene" uid="uid://d35usy5ur7f10" path="res://Scenes/projectile_launcher.tscn" id="5_760ps"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ejkf"]
 font_size = 25
-font_color = Color(0, 0, 0.501961, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aew05"]
 size = Vector2(1280, 68)
@@ -27,26 +26,28 @@ offset_bottom = 720.0
 color = Color(0.05, 0.05, 0.05, 1)
 metadata/_edit_lock_ = true
 
-[node name="TimeLabel" type="Node2D" parent="."]
+[node name="AmmoCount" type="Node2D" parent="."]
 
-[node name="TimeLabel" type="Label" parent="TimeLabel"]
+[node name="AmmoCount" type="Label" parent="AmmoCount"]
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 199.0
 offset_bottom = 51.0
-text = "(Time Elapsed)"
+text = "(Ammo Remaining)"
 label_settings = SubResource("LabelSettings_0ejkf")
 
-[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("PrefabParent")]
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(142.159, 607.396)
 script = ExtResource("2_q5t7f")
-Prefab = ExtResource("3_shpse")
-PrefabParent = NodePath("../Projectile Parent")
 
 [node name="Player" type="Node2D" parent="Player"]
-position = Vector2(151, 629.199)
+position = Vector2(16.785, 27.16)
 script = ExtResource("2_3ms8g")
-size = Vector2(51.2424, 45.6693)
+size = Vector2(79.8012, 34.1606)
 fill_color = Color(0.34112, 0.41, 0.3116, 1)
+
+[node name="Projectile Launcher" parent="Player" instance=ExtResource("5_760ps")]
+position = Vector2(-0.019989, -0.00994873)
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -531,4 +532,4 @@ corner_radius = 0.0
 fill_color = Color(0.359069, 0.359069, 0.359069, 1)
 metadata/_edit_lock_ = true
 
-[node name="Projectile Parent" type="Node2D" parent="."]
+[node name="Projectile Parent" type="Node2D" parent="." groups=["ProjectilesParent"]]

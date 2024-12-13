@@ -3,23 +3,21 @@ using System;
 
 public partial class GameEngineProject : Node2D
 {
-    private float time = 0.0f;
+    ProjectileLauncher launcher = new ProjectileLauncher();
 
-    private Label timeLabel;
+    public Label ammoCount;
 
     public override void _Ready()
     {
         base._Ready();
 
-        timeLabel = GetNode<Label>("TimeLabel/TimeLabel");
+        ammoCount = GetNode<Label>("AmmoCount/AmmoCount");
     }
 
     public override void _Process(double delta)
     {
         base._Process(delta);
 
-        time += (float)delta;
-
-        timeLabel.Text = $"Time elapsed since start: {time:F1} s";
+        ammoCount.Text = $"Missiles Remaining: {launcher.ammo}";
     }
 }

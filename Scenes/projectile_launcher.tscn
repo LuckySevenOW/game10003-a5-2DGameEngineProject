@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d35usy5ur7f10"]
+
+[ext_resource type="Script" path="res://Scenes/ProjectileLauncher.cs" id="1_sud76"]
+[ext_resource type="PackedScene" uid="uid://bgif4i0gy1e55" path="res://Scenes/projectile.tscn" id="2_u70ed"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_ypjlg"]
+
+[node name="Projectile Launcher" type="Node2D" node_paths=PackedStringArray("Aiming")]
+position = Vector2(145.23, 608.18)
+script = ExtResource("1_sud76")
+Aiming = NodePath("Aiming")
+ProjectileScene = ExtResource("2_u70ed")
+
+[node name="Aiming" type="Node2D" parent="."]
+
+[node name="Rectangle" type="Node2D" parent="Aiming"]
+script = ExtResource("2_ypjlg")
+size = Vector2(65.4741, 20)
+corner_radius = 5.75977
